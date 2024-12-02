@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Blog Card</title>
+</head>
+<body>
+  <dialog class="tag-modal" id="tag-modal">
+    <h2>Other posts about this topic: <span>learning</span></h2>
+    <ul>
+      <li><a href="#">Semantic HTML</a></li>
+      <li><a href="#">Layout in CSS</a></li>
+      <li><a href="#">Responsiveness</a></li>
+      <li><a href="#">CSS Custom Properties</a></li>
+    </ul>
+    <button onclick="closeModal()">Close</button>
+  </dialog>
+  <div class="card">
+    <div class="post-img-container">
+      <img class="rounded" src="./assets/images/illustration-article.svg" alt="A design with HTML buttons styled with CSS">
+    </div>
+    <div class="post-description">
+      <button class="post-tag" onclick="openModal()">Learning</button>
+      <p class="post-pub-date">Published 21 Dec 2023</p>
+      <!-- I'm assuming there's an h1 for the page somewhere -->
+       <h2 class="post-title"><a href="#">HTML & CSS foundations</a></h2>
+       <p class="post-summary">These languages are the backbone of every website, defining structure, content, and presentation.</p>
+    </div>
+    <div class="post-author">
+      <div class="post-author-picture">
+        <a href="#"><img src="./assets/images/image-avatar.webp" alt="Picture of the post's author"></a>
+      </div>
+      <p class="post-author-name"><a href="#">Greg Hooper</a></p>   
+    </div>
+  </div>
+  <script>
+    const tagModal = document.querySelector('#tag-modal')
+    const openModal = () => {
+      tagModal.classList.add('active')
+      tagModal.showModal()
+    }
+    const closeModal = () => {
+      tagModal.close()
+      tagModal.classList.remove('active')
+    }
+  </script>
+</body>
+</html>
